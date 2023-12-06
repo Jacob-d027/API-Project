@@ -1,24 +1,148 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WhL-Bp-TTj">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Item-->
+        <scene sceneID="daE-HT-pGF">
+            <objects>
+                <viewController id="SFw-ai-UCG" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="o7Z-lZ-gKO">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="pxi-v0-hEd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" image="brain.filled.head.profile" catalog="system" selectedImage="brain.filled.head.profile" id="R3R-1v-NJQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Obz-pW-ugE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1888" y="697"/>
+        </scene>
+        <!--Dog-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="DogViewController" customModule="API_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VjS-Fs-5s3">
+                                <rect key="frame" x="40" y="135" width="313" height="465"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="313" id="Bnz-jP-NLB"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zxV-Wn-ST1">
+                                <rect key="frame" x="83" y="620" width="227" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Press Me For a Dog Photo!"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VjS-Fs-5s3" firstAttribute="centerX" secondItem="zxV-Wn-ST1" secondAttribute="centerX" id="53r-Tv-Eh4"/>
+                            <constraint firstItem="VjS-Fs-5s3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="76" id="F8H-Yb-5pa"/>
+                            <constraint firstItem="zxV-Wn-ST1" firstAttribute="top" secondItem="VjS-Fs-5s3" secondAttribute="bottom" constant="20" id="bf3-lF-06m"/>
+                            <constraint firstItem="zxV-Wn-ST1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bpt-m9-VA5"/>
+                            <constraint firstItem="VjS-Fs-5s3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="lrc-uo-0Qd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zxV-Wn-ST1" secondAttribute="bottom" constant="114" id="vuz-3m-8cp"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Dog" image="pawprint.fill" catalog="system" selectedImage="pawprint.fill" id="NVo-db-cae"/>
+                    <navigationItem key="navigationItem" id="kgE-3J-PqS"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2918.320610687023" y="311.97183098591552"/>
+        </scene>
+        <!--Representatives-->
+        <scene sceneID="nfy-39-t4b">
+            <objects>
+                <tableViewController id="eI7-Qc-4So" customClass="RepresentativesTableViewController" customModule="API_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="3OU-XU-Y0q">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search by Zipcode" id="M5i-ir-N0M">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="eI7-Qc-4So" id="vKC-yW-m3G"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="jDQ-Or-2zQ">
+                                <rect key="frame" x="0.0" y="94" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jDQ-Or-2zQ" id="fr1-vq-lIG">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="eI7-Qc-4So" id="ipC-oF-U1q"/>
+                            <outlet property="delegate" destination="eI7-Qc-4So" id="Aae-NA-uhi"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Representatives" largeTitleDisplayMode="always" id="cfO-GZ-0Sk"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hvs-8a-rxS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3792" y="-363"/>
+        </scene>
+        <!--Rep-->
+        <scene sceneID="UtH-5V-trn">
+            <objects>
+                <navigationController id="L2B-mt-q9M" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Rep" image="star.fill" catalog="system" selectedImage="star.fill" id="or0-3X-b2X"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cw7-Mp-7iJ">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="eI7-Qc-4So" kind="relationship" relationship="rootViewController" id="sQG-Ga-GvR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0H8-o4-rpK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2918" y="-365"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="LS9-gO-dtS">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="WhL-Bp-TTj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eqK-fs-kPd">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="lmi-nN-3Di"/>
+                        <segue destination="L2B-mt-q9M" kind="relationship" relationship="viewControllers" id="ywW-lJ-U4F"/>
+                        <segue destination="SFw-ai-UCG" kind="relationship" relationship="viewControllers" id="Eli-bA-uf7"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uGR-ce-tJJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1889" y="-15"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="brain.filled.head.profile" catalog="system" width="120" height="128"/>
+        <image name="pawprint.fill" catalog="system" width="128" height="112"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
