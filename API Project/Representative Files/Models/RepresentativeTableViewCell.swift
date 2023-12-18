@@ -9,6 +9,10 @@ import UIKit
 
 class RepresentativeTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var representativeNameLabel: UILabel!
+    @IBOutlet weak var partyLabel: UILabel!
+    @IBOutlet weak var linkLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

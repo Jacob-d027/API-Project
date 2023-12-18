@@ -22,7 +22,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Obz-pW-ugE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1888" y="697"/>
+            <point key="canvasLocation" x="1888" y="730"/>
         </scene>
         <!--Dog-->
         <scene sceneID="tne-QT-ifu">
@@ -42,21 +42,36 @@
                                 <rect key="frame" x="83" y="620" width="227" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Press Me For a Dog Photo!"/>
+                                <connections>
+                                    <action selector="dogButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mlr-hs-uu2"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DW8-46-CA7">
+                                <rect key="frame" x="141" y="415.66666666666669" width="111" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="VjS-Fs-5s3" firstAttribute="centerX" secondItem="zxV-Wn-ST1" secondAttribute="centerX" id="53r-Tv-Eh4"/>
+                            <constraint firstItem="DW8-46-CA7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7yw-F2-J9O"/>
                             <constraint firstItem="VjS-Fs-5s3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="76" id="F8H-Yb-5pa"/>
                             <constraint firstItem="zxV-Wn-ST1" firstAttribute="top" secondItem="VjS-Fs-5s3" secondAttribute="bottom" constant="20" id="bf3-lF-06m"/>
                             <constraint firstItem="zxV-Wn-ST1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bpt-m9-VA5"/>
                             <constraint firstItem="VjS-Fs-5s3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="lrc-uo-0Qd"/>
+                            <constraint firstItem="DW8-46-CA7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rg1-MB-eFe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zxV-Wn-ST1" secondAttribute="bottom" constant="114" id="vuz-3m-8cp"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Dog" image="pawprint.fill" catalog="system" selectedImage="pawprint.fill" id="NVo-db-cae"/>
                     <navigationItem key="navigationItem" id="kgE-3J-PqS"/>
+                    <connections>
+                        <outlet property="dogImageView" destination="VjS-Fs-5s3" id="kEb-YB-T2a"/>
+                        <outlet property="errorLabel" destination="DW8-46-CA7" id="xoY-we-HWN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -79,13 +94,43 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="jDQ-Or-2zQ">
-                                <rect key="frame" x="0.0" y="94" width="393" height="43.666667938232422"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RepresentativeCell" rowHeight="102" id="jDQ-Or-2zQ" customClass="RepresentativeTableViewCell" customModule="API_Project" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="94" width="393" height="102"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jDQ-Or-2zQ" id="fr1-vq-lIG">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="102"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="QLT-Nc-721">
+                                            <rect key="frame" x="42" y="16" width="167.66666666666666" height="71"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Representative Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isY-Tq-0tf">
+                                                    <rect key="frame" x="0.0" y="0.0" width="167.66666666666666" height="20.333333333333332"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Party: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQh-cH-7oa">
+                                                    <rect key="frame" x="0.0" y="25.333333333333336" width="49" height="20.333333333333336"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6de-0C-2Rs">
+                                                    <rect key="frame" x="0.0" y="50.666666666666664" width="36" height="20.333333333333336"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="linkLabel" destination="6de-0C-2Rs" id="sof-XY-OfE"/>
+                                    <outlet property="partyLabel" destination="dQh-cH-7oa" id="BrM-2h-TRL"/>
+                                    <outlet property="representativeNameLabel" destination="isY-Tq-0tf" id="mbF-cm-cH7"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -94,10 +139,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Representatives" largeTitleDisplayMode="always" id="cfO-GZ-0Sk"/>
+                    <connections>
+                        <outlet property="searchBar" destination="M5i-ir-N0M" id="gnL-KN-xn6"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hvs-8a-rxS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3792" y="-363"/>
+            <point key="canvasLocation" x="3791.6030534351144" y="-363.38028169014086"/>
         </scene>
         <!--Rep-->
         <scene sceneID="UtH-5V-trn">
