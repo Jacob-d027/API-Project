@@ -13,15 +13,11 @@ class RepresentativeTableViewCell: UITableViewCell {
     @IBOutlet weak var partyLabel: UILabel!
     @IBOutlet weak var linkLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func update(with rep: Representative) {
+        representativeNameLabel.text = "Name: \(rep.name)"
+        partyLabel.text = "Party: \(rep.party)"
+        linkLabel.text = "Link: \(rep.link)"
     }
 
 }

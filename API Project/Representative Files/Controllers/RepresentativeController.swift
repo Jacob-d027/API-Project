@@ -12,6 +12,7 @@ enum RepresentativeFetchingError: Error {
 }
 
 class RepresentativeController: Decodable {
+    
     func fetchRepresentatives(from zipcode: String) async throws -> SearchResponse {
         
         var baseURL = URL(string: "https://whoismyrepresentative.com/getall_mems.php")!
